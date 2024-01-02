@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
 project(helloworld VERSION 1.0)
 add_subdirectory(deps/simple)
 add_executable(${PROJECT_NAME} src/main.cc)
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 target_link_libraries(${PROJECT_NAME} simple)
 target_include_directories(${PROJECT_NAME} PRIVATE deps/simple)
